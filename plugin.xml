@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android" id="com.zlzkj.cordova.toast"
+	version="1.0.0">
+
+	<name>Toast</name>
+
+	<description>
+	</description>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<js-module src="www/Toast.js" name="Toast">
+		<clobbers target="cordova.plugins.toast" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<!-- 这里name是在js调用exec时的第三个参数,name跟java类名对应 -->
+			<feature name="ToastService">
+				<param name="android-package" value="com.zlzkj.cordova.ToastService" />
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/com/zlzkj/cordova/ToastService.java"
+			target-dir="src/com/zlzkj/cordova" />
+	</platform>
+
+</plugin>
