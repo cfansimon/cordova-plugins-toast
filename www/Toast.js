@@ -28,5 +28,6 @@ Toast.prototype.show = function(message, duration, position,
 /**
  * 安装插件
  */
-var toast = new Toast();
-module.exports = toast;
+module.exports = {
+	toast : new Toast()
+};
