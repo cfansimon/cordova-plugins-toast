@@ -12,7 +12,7 @@
 		<engine name="cordova" version=">=3.0.0" />
 	</engines>
 
-	<js-module src="www/Toast.js" name="Toast">
+	<js-module src="www/toast.js" name="toast">
 		<clobbers target="cordova.plugins.toast" />
 	</js-module>
 
@@ -20,12 +20,12 @@
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<!-- 这里name是在js调用exec时的第三个参数,name跟java类名对应 -->
-			<feature name="ToastService">
-				<param name="android-package" value="com.zlzkj.cordova.ToastService" />
+			<feature name="ToastPlugin">
+				<param name="android-package" value="com.zlzkj.cordova.ToastPlugin" />
 			</feature>
 		</config-file>
 
-		<source-file src="src/android/com/zlzkj/cordova/ToastService.java"
+		<source-file src="src/android/com/zlzkj/cordova/ToastPlugin.java"
 			target-dir="src/com/zlzkj/cordova" />
 	</platform>
 

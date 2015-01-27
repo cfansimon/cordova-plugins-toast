@@ -1,4 +1,3 @@
-
 //引入依赖
 var exec = require('cordova/exec');
 
@@ -6,12 +5,11 @@ var exec = require('cordova/exec');
  * 主类
  */
 function Toast() {
-}
-;
+};
 
 /**
  * 显示一个原生Toast;
- *
+ * 
  * @param message
  *            提示内容
  * @param duration
@@ -21,13 +19,11 @@ function Toast() {
  */
 Toast.prototype.show = function(message, duration, position,
 		successCallback, errorCallback) {
-	exec(successCallback, errorCallback, "ToastService", "show", [
-			message, duration, position ]);
+	exec(successCallback, errorCallback, "ToastPlugin", "show", [ message,
+			duration, position ]);
 };
 
 /**
  * 安装插件
  */
-module.exports = {
-	toast : new Toast()
-};
+module.exports = new Toast();

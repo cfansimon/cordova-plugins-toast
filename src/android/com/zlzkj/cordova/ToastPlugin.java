@@ -6,7 +6,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class ToastService extends CordovaPlugin {
+public class ToastPlugin extends CordovaPlugin {
 
 	// 可接收的方法
 	private static final String ACTION_SHOW_EVENT = "show";
